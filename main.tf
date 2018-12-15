@@ -1,26 +1,3 @@
-variable "filename" {
-  description = "Artifact filename"
-  default     = "lambda.zip"
-}
-
-variable "module_name" {
-  description = "Name of the terraform module"
-}
-
-variable "module_path" {
-  description = "Local path to the terraform module; e.g. `${path.module}`"
-}
-
-variable "git_ref" {
-  description = "Git hash corresponding to the remote artifact. Leave blank and it will be computed from the `module_path` checkout"
-  default     = ""
-}
-
-variable "url" {
-  description = "URL template for the remote artifact"
-  default     = "https://artifacts.cloudposse.com/$${module_name}/$${git_ref}/$${filename}"
-}
-
 data "external" "curl" {
   program = ["curl", "-sSL", "--write-out", "{\"success\": \"true\"}", "-o", "${local.output_file}", "${local.url}"]
 }
@@ -51,16 +28,4 @@ data "template_file" "url" {
 
 locals {
   url = "${data.template_file.url.rendered}"
-}
-
-output "git_ref" {
-  value = "${local.git_ref}"
-}
-
-output "file" {
-  value = "${local.output_file}"
-}
-
-output "url" {
-  value = "${local.url}"
 }
