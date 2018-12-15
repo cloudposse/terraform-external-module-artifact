@@ -66,6 +66,7 @@ usage: |-
   ```
 
   __NOTE:__ Leave `git_ref` blank and it will be automatically computed from the `module_path` 
+  __NOTE:__ We've published [an artifact](https://artifacts.cloudposse.com/terraform-external-module-artifact/example/test.zip) for purpose of testing this module
 
 include:
   - "docs/targets.md"
