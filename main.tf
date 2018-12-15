@@ -1,5 +1,5 @@
 data "external" "curl" {
-  program = ["curl", "-sSL", "--write-out", "{\"success\": \"true\"}", "-o", "${local.output_file}", "${local.url}"]
+  program = ["curl", "${var.curl_arguments}", "--write-out", "{\"success\": \"true\"}", "-o", "${local.output_file}", "${local.url}"]
 }
 
 data "external" "git" {

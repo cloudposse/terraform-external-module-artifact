@@ -20,3 +20,8 @@ variable "url" {
   description = "URL template for the remote artifact"
   default     = "https://artifacts.cloudposse.com/$${module_name}/$${git_ref}/$${filename}"
 }
+
+variable "curl_arguments" {
+  description = "Arguments that should get passed to `curl`"
+  default     = "-sSL"
+}
