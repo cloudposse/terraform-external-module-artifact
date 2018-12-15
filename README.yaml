@@ -41,7 +41,7 @@ description: |-
   Terraform Module to fetch remote build artifacts via http(s) using `curl`. 
 
 introduction: |-
-  This terraform module uses the [`external`] data provider to execute `curl`, which downloads the file locally to the modules cache folder. 
+  This terraform module uses the [`external`](https://www.terraform.io/docs/providers/external/data_source.html) data provider to execute `curl`, which downloads the file locally to the modules cache folder. 
   
   It's ideally suited for downloading public build artifacts (E.g. for use with Lambdas) associated with terraform modules. 
   We recommend using this pattern to avoid adding binary artifacts like `.zip` files to Git repositories.

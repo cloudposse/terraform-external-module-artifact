@@ -1,6 +1,6 @@
 variable "filename" {
   description = "Artifact filename"
-  default = "lambda.zip"
+  default     = "lambda.zip"
 }
 
 variable "module_name" {
@@ -13,12 +13,12 @@ variable "module_path" {
 
 variable "git_ref" {
   description = "Git hash corresponding to the remote artifact. Leave blank and it will be computed from the `module_path` checkout"
-  default = ""
+  default     = ""
 }
 
 variable "url" {
   description = "URL template for the remote artifact"
-  default = "https://artifacts.cloudposse.com/$${module_name}/$${git_ref}/$${filename}"
+  default     = "https://artifacts.cloudposse.com/$${module_name}/$${git_ref}/$${filename}"
 }
 
 data "external" "curl" {
@@ -26,13 +26,13 @@ data "external" "curl" {
 }
 
 data "external" "git" {
-  count = "${var.git_ref == "" ? 1 : 0}"
+  count   = "${var.git_ref == "" ? 1 : 0}"
   program = ["git", "-C", "${var.module_path}", "log", "-n", "1", "--pretty=format:{\"ref\": \"%H\"}"]
 }
 
 locals {
   external_git_ref = "${join("", data.external.git.*.result.ref)}"
-  git_ref     = "${var.git_ref == "" ? local.external_git_ref : var.git_ref}"
+  git_ref          = "${var.git_ref == "" ? local.external_git_ref : var.git_ref}"
 }
 
 locals {
