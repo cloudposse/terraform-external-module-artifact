@@ -13,3 +13,7 @@ output "url" {
 output "file" {
   value = "${module.example.file}"
 }
+
+output "base64sha256" {
+  value = "${module.example.base64sha256}"
+}
