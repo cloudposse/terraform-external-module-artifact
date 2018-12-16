@@ -1,0 +1,9 @@
+.build-harness
+build-harness
+.terraform
+*.tfstate
+*.tfstate.*
+.idea
+*.iml
+.viminfo
+.terraform.d

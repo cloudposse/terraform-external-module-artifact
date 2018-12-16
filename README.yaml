@@ -1,0 +1,78 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: terraform-external-module-artifact
+
+# License of this project
+license: "APACHE2"
+
+# Canonical GitHub repo
+github_repo: cloudposse/terraform-external-module-artifact
+
+# Badges to display
+badges:
+  - name: "Build Status"
+    image: "https://travis-ci.org/cloudposse/terraform-external-module-artifact.svg?branch=master"
+    url: "https://travis-ci.org/cloudposse/terraform-external-module-artifact"
+  - name: "Latest Release"
+    image: "https://img.shields.io/github/release/cloudposse/terraform-external-module-artifact.svg"
+    url: "https://github.com/cloudposse/terraform-external-module-artifact/releases/latest"
+  - name: "Slack Community"
+    image: "https://slack.cloudposse.com/badge.svg"
+    url: "https://slack.cloudposse.com"
+
+related:
+  - name: "terraform-null-smtp-mail"
+    description: "Terraform module to send transactional emails via an SMTP server (e.g. mailgun)"
+    url: "https://github.com/cloudposse/terraform-null-smtp-mail"
+
+references:
+  - name: "curl"
+    description: "command line tool and library for transferring data with URLs"
+    url: "https://curl.haxx.se/"
+
+
+# Short description of this project
+description: |-
+  Terraform Module to fetch remote build artifacts via http(s) using `curl`. 
+
+introduction: |-
+  This terraform module uses the [`external`](https://www.terraform.io/docs/providers/external/data_source.html) data provider to execute `curl`, which downloads the file locally to the modules cache folder. 
+  
+  It's ideally suited for downloading public build artifacts (E.g. for use with Lambdas) associated with terraform modules. 
+  We recommend using this pattern to avoid adding binary artifacts like `.zip` files to Git repositories.
+
+  **NOTE:** The term `external` refers to the primary Terraform [provider](https://www.terraform.io/docs/providers/external/data_source.html) used in this module.
+
+  ## Dependencies
+
+    First make sure you have `curl` installed and that it exists in your `PATH` (E.g. `/usr/bin`).
+
+# How to use this project
+usage: |-
+
+  ```hcl
+  module "example" {
+    source     = "git::https://github.com/cloudposse/terraform-external-module-artifact.git?ref=master"
+    filename    = "test.zip"
+    git_ref     = "example"
+    module_name = "terraform-external-module-artifact"
+    module_path = "${path.module}"
+  }
+  ```
+
+  __NOTE:__ Leave `git_ref` blank and it will be automatically computed from the `module_path` 
+  __NOTE:__ We've published [an artifact](https://artifacts.cloudposse.com/terraform-external-module-artifact/example/test.zip) for purpose of testing this module
+
+include:
+  - "docs/targets.md"
+  - "docs/terraform.md"
+
+# Contributors to this project
+contributors:
+  - name: "Erik Osterman"
+    github: "osterman"
