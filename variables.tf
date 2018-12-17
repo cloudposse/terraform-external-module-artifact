@@ -23,5 +23,5 @@ variable "url" {
 
 variable "curl_arguments" {
   description = "Arguments that should get passed to `curl`"
-  default     = "-fsL"
+  default     = "-fL"
 }
