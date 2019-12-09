@@ -1,7 +1,11 @@
+variable "region" {
+  type        = string
+  description = "AWS Region"
+}
+
 variable "filename" {
   type        = string
   description = "Artifact filename"
-  default     = "lambda.zip"
 }
 
 variable "module_name" {
