@@ -13,11 +13,6 @@ variable "module_name" {
   description = "Name of the terraform module"
 }
 
-variable "module_path" {
-  type        = string
-  description = "Local path to the terraform module; e.g. `$${path.module}`"
-}
-
 variable "git_ref" {
   type        = string
   description = "Git hash corresponding to the remote artifact. Leave blank and it will be computed from the `module_path` checkout"

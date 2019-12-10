@@ -6,7 +6,7 @@ module "external_module_artifact" {
   source         = "../../"
   filename       = var.filename
   module_name    = var.module_name
-  module_path    = var.module_path
+  module_path    = path.module
   url            = var.url
   git_ref        = var.git_ref
   curl_arguments = var.curl_arguments
