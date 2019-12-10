@@ -42,7 +42,7 @@
 
 [![Cloud Posse][logo]](https://cpco.io/homepage)
 
-# terraform-external-module-artifact [![Codefresh Build Status](https://g.codefresh.io/api/badges/pipeline/cloudposse/terraform-modules%2Fterraform-aws-eks-cluster?type=cf-1)](https://g.codefresh.io/public/accounts/cloudposse/pipelines/5d8cd583941e46a098d3992d) [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-external-module-artifact.svg)](https://github.com/cloudposse/terraform-external-module-artifact/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
+# terraform-external-module-artifact [![Codefresh Build Status](https://g.codefresh.io/api/badges/pipeline/cloudposse/terraform-modules%2Fterraform-external-module-artifact?type=cf-1)](https://g.codefresh.io/public/accounts/cloudposse/pipelines/5defbab3f04032f54518b539) [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-external-module-artifact.svg)](https://github.com/cloudposse/terraform-external-module-artifact/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
 
 
 Terraform Module to fetch remote build artifacts via http(s) using `curl`.
@@ -100,7 +100,7 @@ Instead pin to the release tag (e.g. `?ref=tags/x.y.z`) of one of our [latest re
 
 
 ```hcl
-module "example" {
+module "external_module_artifact" {
   source     = "git::https://github.com/cloudposse/terraform-external-module-artifact.git?ref=master"
   filename    = "test.zip"
   git_ref     = "example"
