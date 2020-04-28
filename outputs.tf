@@ -1,7 +1,7 @@
-output "git_ref" {
-  description = "Git commit hash corresponding to the artifact"
-  value       = local.git_ref
-}
+# output "git_ref" {
+#   description = "Git commit hash corresponding to the artifact"
+#   value       = local.git_ref
+# }
 
 output "file" {
   description = "Full path to the locally downloaded file"
