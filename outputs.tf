@@ -15,5 +15,5 @@ output "url" {
 
 output "base64sha256" {
   description = "Base64 encoded SHA256 hash of the local file"
-  value       = filebase64sha256(local.external_curl_filename_effective)
+  value       = var.enabled ? filebase64sha256(local.external_curl_filename_effective) : ""
 }
