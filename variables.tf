@@ -34,6 +34,6 @@ variable "curl_arguments" {
 
 variable "enabled" {
   type        = bool
-  default     = true
+  default     = false
   description = "Set to false to prevent the module from creating any resources"
 }
