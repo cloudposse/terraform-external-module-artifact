@@ -3,6 +3,7 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | curl_arguments | Arguments that should get passed to `curl` | string | `-fsSL` | no |
+| enabled | Set to false to prevent the module from creating any resources | bool | `true` | no |
 | filename | Artifact filename | string | `lambda.zip` | no |
 | git_ref | Git hash corresponding to the remote artifact. Leave blank and it will be computed from the `module_path` checkout | string | `` | no |
 | module_name | Name of the terraform module | string | - | yes |
