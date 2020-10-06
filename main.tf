@@ -1,6 +1,7 @@
 data "external" "curl" {
   count   = var.enabled ? 1 : 0
-  program = ["curl", var.curl_arguments, "--write-out", "{\"success\": \"true\", \"filename_effective\": \"%%{filename_effective}\"}", "-o", local.output_file, local.url]
+  program = concat(["curl"], var.curl_arguments, ["--write-out", "{\"success\": \"true\", \"filename_effective\": \"%%{filename_effective}\"}", "-o", local.output_file, local.url])
+  depends_on = [data.external.git]
 }
 
 data "external" "git" {
