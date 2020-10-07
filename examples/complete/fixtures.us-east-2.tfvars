@@ -8,4 +8,4 @@ git_ref = ""
 
 url = "https://artifacts.cloudposse.com/terraform-external-module-artifact/example/test.zip"
 
-curl_arguments = "-fsSL"
+curl_arguments = ["-fsSL"]
