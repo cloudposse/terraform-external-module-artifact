@@ -31,9 +31,3 @@ variable "curl_arguments" {
   description = "Arguments that should get passed to `curl`"
   default     = ["-fsSL"]
 }
-
-variable "enabled" {
-  type        = bool
-  default     = true
-  description = "Set to false to prevent the module from creating any resources"
-}

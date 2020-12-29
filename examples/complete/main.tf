@@ -10,4 +10,6 @@ module "external_module_artifact" {
   url            = var.url
   git_ref        = var.git_ref
   curl_arguments = var.curl_arguments
+
+  context = module.this.context
 }
