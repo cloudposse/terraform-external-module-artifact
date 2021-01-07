@@ -1,11 +1,11 @@
 data "external" "curl" {
-  count      = var.enabled ? 1 : 0
+  count      = module.this.enabled ? 1 : 0
   program    = concat(["curl"], var.curl_arguments, ["--write-out", "{\"success\": \"true\", \"filename_effective\": \"%%{filename_effective}\"}", "-o", local.output_file, local.url])
   depends_on = [data.external.git]
 }
 
 data "external" "git" {
-  count   = var.enabled && var.git_ref == "" ? 1 : 0
+  count   = module.this.enabled && var.git_ref == "" ? 1 : 0
   program = ["git", "-C", var.module_path, "log", "-n", "1", "--pretty=format:{\"ref\": \"%H\"}"]
 }
 
@@ -18,7 +18,7 @@ locals {
 }
 
 data "template_file" "url" {
-  count    = var.enabled ? 1 : 0
+  count    = module.this.enabled ? 1 : 0
   template = replace(var.url, "$$", "$")
 
   vars = {

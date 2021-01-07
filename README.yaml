@@ -61,7 +61,9 @@ usage: |-
 
   ```hcl
   module "external_module_artifact" {
-    source     = "git::https://github.com/cloudposse/terraform-external-module-artifact.git?ref=master"
+    source = "cloudposse/module-artifact/external"
+    # Cloud Posse recommends pinning every module to a specific version
+    # version = "x.x.x"
     filename    = "test.zip"
     git_ref     = "example"
     module_name = "terraform-external-module-artifact"
