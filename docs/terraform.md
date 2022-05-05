@@ -7,14 +7,12 @@
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 2.0 |
 | <a name="requirement_external"></a> [external](#requirement\_external) | >= 1.2 |
 | <a name="requirement_local"></a> [local](#requirement\_local) | >= 1.3 |
-| <a name="requirement_template"></a> [template](#requirement\_template) | >= 2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_external"></a> [external](#provider\_external) | >= 1.2 |
-| <a name="provider_template"></a> [template](#provider\_template) | >= 2.0 |
 
 ## Modules
 
