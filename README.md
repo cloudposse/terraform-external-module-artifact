@@ -173,7 +173,6 @@ Available targets:
 |------|------|
 | [external_external.curl](https://registry.terraform.io/providers/hashicorp/external/latest/docs/data-sources/external) | data source |
 | [external_external.git](https://registry.terraform.io/providers/hashicorp/external/latest/docs/data-sources/external) | data source |
-| [template_file.url](https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/file) | data source |
 
 ## Inputs
 
