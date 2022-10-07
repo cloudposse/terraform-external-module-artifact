@@ -14,16 +14,6 @@ locals {
   external_git_ref                 = join("", data.external.git.*.result.ref)
   git_ref                          = var.git_ref == "" ? local.external_git_ref : var.git_ref
   output_file                      = join("/", [var.module_path, var.filename])
-  url                              = join("", data.template_file.url.*.rendered)
+  url = replace(replace(replace(var.url, "$$${module_name}", var.module_name), "$$${git_ref}", var.git_ref), "$$${filename}", var.filename)
 }
 
-data "template_file" "url" {
-  count    = module.this.enabled ? 1 : 0
-  template = replace(var.url, "$$", "$")
-
-  vars = {
-    filename    = var.filename
-    git_ref     = local.git_ref
-    module_name = var.module_name
-  }
-}
