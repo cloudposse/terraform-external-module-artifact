@@ -7,14 +7,12 @@
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 2.0 |
 | <a name="requirement_external"></a> [external](#requirement\_external) | >= 1.2 |
 | <a name="requirement_local"></a> [local](#requirement\_local) | >= 1.3 |
-| <a name="requirement_template"></a> [template](#requirement\_template) | >= 2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_external"></a> [external](#provider\_external) | >= 1.2 |
-| <a name="provider_template"></a> [template](#provider\_template) | >= 2.0 |
 
 ## Modules
 
@@ -28,7 +26,6 @@
 |------|------|
 | [external_external.curl](https://registry.terraform.io/providers/hashicorp/external/latest/docs/data-sources/external) | data source |
 | [external_external.git](https://registry.terraform.io/providers/hashicorp/external/latest/docs/data-sources/external) | data source |
-| [template_file.url](https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/file) | data source |
 
 ## Inputs
 
@@ -57,7 +54,7 @@
 | <a name="input_stage"></a> [stage](#input\_stage) | ID element. Usually used to indicate role, e.g. 'prod', 'staging', 'source', 'build', 'test', 'deploy', 'release' | `string` | `null` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Additional tags (e.g. `{'BusinessUnit': 'XYZ'}`).<br>Neither the tag keys nor the tag values will be modified by this module. | `map(string)` | `{}` | no |
 | <a name="input_tenant"></a> [tenant](#input\_tenant) | ID element \_(Rarely used, not included by default)\_. A customer identifier, indicating who this instance of a resource is for | `string` | `null` | no |
-| <a name="input_url"></a> [url](#input\_url) | URL template for the remote artifact | `string` | `"https://artifacts.cloudposse.com/$${module_name}/$${git_ref}/$${filename}"` | no |
+| <a name="input_url"></a> [url](#input\_url) | URL template for the remote artifact | `string` | `"https://artifacts.cloudposse.com/%s/%s/%s"` | no |
 
 ## Outputs
 

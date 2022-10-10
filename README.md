@@ -152,14 +152,12 @@ Available targets:
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 2.0 |
 | <a name="requirement_external"></a> [external](#requirement\_external) | >= 1.2 |
 | <a name="requirement_local"></a> [local](#requirement\_local) | >= 1.3 |
-| <a name="requirement_template"></a> [template](#requirement\_template) | >= 2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_external"></a> [external](#provider\_external) | >= 1.2 |
-| <a name="provider_template"></a> [template](#provider\_template) | >= 2.0 |
 
 ## Modules
 
@@ -173,7 +171,6 @@ Available targets:
 |------|------|
 | [external_external.curl](https://registry.terraform.io/providers/hashicorp/external/latest/docs/data-sources/external) | data source |
 | [external_external.git](https://registry.terraform.io/providers/hashicorp/external/latest/docs/data-sources/external) | data source |
-| [template_file.url](https://registry.terraform.io/providers/hashicorp/template/latest/docs/data-sources/file) | data source |
 
 ## Inputs
 
@@ -202,7 +199,7 @@ Available targets:
 | <a name="input_stage"></a> [stage](#input\_stage) | ID element. Usually used to indicate role, e.g. 'prod', 'staging', 'source', 'build', 'test', 'deploy', 'release' | `string` | `null` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Additional tags (e.g. `{'BusinessUnit': 'XYZ'}`).<br>Neither the tag keys nor the tag values will be modified by this module. | `map(string)` | `{}` | no |
 | <a name="input_tenant"></a> [tenant](#input\_tenant) | ID element \_(Rarely used, not included by default)\_. A customer identifier, indicating who this instance of a resource is for | `string` | `null` | no |
-| <a name="input_url"></a> [url](#input\_url) | URL template for the remote artifact | `string` | `"https://artifacts.cloudposse.com/$${module_name}/$${git_ref}/$${filename}"` | no |
+| <a name="input_url"></a> [url](#input\_url) | URL template for the remote artifact | `string` | `"https://artifacts.cloudposse.com/%s/%s/%s"` | no |
 
 ## Outputs
 
@@ -382,7 +379,7 @@ Check out [our other projects][github], [follow us on twitter][twitter], [apply 
 
 [![README Footer][readme_footer_img]][readme_footer_link]
 [![Beacon][beacon]][website]
-
+<!-- markdownlint-disable -->
   [logo]: https://cloudposse.com/logo-300x69.svg
   [docs]: https://cpco.io/docs?utm_source=github&utm_medium=readme&utm_campaign=cloudposse/terraform-external-module-artifact&utm_content=docs
   [website]: https://cpco.io/homepage?utm_source=github&utm_medium=readme&utm_campaign=cloudposse/terraform-external-module-artifact&utm_content=website
@@ -413,3 +410,4 @@ Check out [our other projects][github], [follow us on twitter][twitter], [apply 
   [share_googleplus]: https://plus.google.com/share?url=https://github.com/cloudposse/terraform-external-module-artifact
   [share_email]: mailto:?subject=terraform-external-module-artifact&body=https://github.com/cloudposse/terraform-external-module-artifact
   [beacon]: https://ga-beacon.cloudposse.com/UA-76589703-4/cloudposse/terraform-external-module-artifact?pixel&cs=github&cm=readme&an=terraform-external-module-artifact
+<!-- markdownlint-restore -->
