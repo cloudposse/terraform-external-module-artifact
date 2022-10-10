@@ -14,6 +14,6 @@ locals {
   external_git_ref                 = join("", data.external.git.*.result.ref)
   git_ref                          = var.git_ref == "" ? local.external_git_ref : var.git_ref
   output_file                      = join("/", [var.module_path, var.filename])
-  url = replace(replace(replace(var.url, "$$${module_name}", var.module_name), "$$${git_ref}", var.git_ref), "$$${filename}", var.filename)
+  url                              = try(format(var.url, var.module_name, local.git_ref, var.filename), var.url)
 }
 

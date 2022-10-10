@@ -23,7 +23,7 @@ variable "git_ref" {
 variable "url" {
   type        = string
   description = "URL template for the remote artifact"
-  default     = "https://artifacts.cloudposse.com/$$${module_name}/$$${git_ref}/$$${filename}"
+  default     = ""https://artifacts.cloudposse.com/%s/%s/%s"
 }
 
 variable "curl_arguments" {
