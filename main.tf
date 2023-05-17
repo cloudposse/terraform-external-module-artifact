@@ -8,6 +8,7 @@ data "external" "git" {
   count   = module.this.enabled && var.git_ref == "" ? 1 : 0
   program = ["git", "-C", var.module_path, "log", "-n", "1", "--pretty=format:{\"ref\": \"%H\"}"]
 }
+  
 
 locals {
   external_curl_filename_effective = join("", data.external.curl.*.result.filename_effective)
