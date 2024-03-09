@@ -1,4 +1,3 @@
----
 #
 # This is the canonical configuration for the `README.md`
 # Run `make readme` to rebuild the `README.md`
@@ -15,16 +14,17 @@ github_repo: cloudposse/terraform-external-module-artifact
 
 # Badges to display
 badges:
-  - name: "Codefresh Build Status"
-    image: "https://g.codefresh.io/api/badges/pipeline/cloudposse/terraform-modules%2Fterraform-external-module-artifact?type=cf-1"
-    url: "https://g.codefresh.io/public/accounts/cloudposse/pipelines/5defbab3f04032f54518b539"
-  - name: "Latest Release"
-    image: "https://img.shields.io/github/release/cloudposse/terraform-external-module-artifact.svg"
-    url: "https://github.com/cloudposse/terraform-external-module-artifact/releases/latest"
-  - name: "Slack Community"
-    image: "https://slack.cloudposse.com/badge.svg"
-    url: "https://slack.cloudposse.com"
+  - name: Latest Release
+    image: https://img.shields.io/github/release/cloudposse/terraform-external-module-artifact.svg?style=for-the-badge
+    url: https://github.com/cloudposse/terraform-external-module-artifact/releases/latest
+  - name: Last Updated
+    image: https://img.shields.io/github/last-commit/cloudposse/terraform-external-module-artifact.svg?style=for-the-badge
+    url: https://github.com/cloudposse/terraform-external-module-artifact/commits
+  - name: Slack Community
+    image: https://slack.cloudposse.com/for-the-badge.svg
+    url: https://slack.cloudposse.com
 
+# List any related terraform modules that this module may be used with or that this module depends on.
 related:
   - name: "terraform-null-smtp-mail"
     description: "Terraform module to send transactional emails via an SMTP server (e.g. mailgun)"
@@ -53,7 +53,7 @@ introduction: |-
     First make sure you have `curl` installed and that it exists in your `PATH` (E.g. `/usr/bin`).
 
 # How to use this project
-usage: |-
+usage: |2-
 
   For a complete example, see [examples/complete](examples/complete).
 
@@ -79,12 +79,4 @@ include:
   - "docs/terraform.md"
 
 # Contributors to this project
-contributors:
-  - name: "Erik Osterman"
-    github: "osterman"
-  - name: "Andriy Knysh"
-    github: "aknysh"
-  - name: "Igor Rodionov"
-    github: "goruha"
-  - name: "RB"
-    github: "nitrocode"
+contributors: []
