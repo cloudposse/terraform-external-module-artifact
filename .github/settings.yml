@@ -5,3 +5,4 @@ repository:
   description: Terraform module to fetch any kind of artifacts using curl (binary and text okay)
   homepage: https://cloudposse.com/accelerate
   topics: terraform, terraform-module, curl, build-artifacts, download, lambda, zip, cicd, hcl2
+
