@@ -22,7 +22,7 @@ badges:
     url: https://github.com/cloudposse/terraform-external-module-artifact/commits
   - name: Slack Community
     image: https://slack.cloudposse.com/for-the-badge.svg
-    url: https://slack.cloudposse.com
+    url: https://cloudposse.com/slack
 
 # List any related terraform modules that this module may be used with or that this module depends on.
 related:
@@ -74,9 +74,5 @@ usage: |2-
   __NOTE:__ Leave `git_ref` blank and it will be automatically computed from the `module_path`
   __NOTE:__ We've published [an artifact](https://artifacts.cloudposse.com/terraform-external-module-artifact/example/test.zip) for purpose of testing this module
 
-include:
-  - "docs/targets.md"
-  - "docs/terraform.md"
-
-# Contributors to this project
+include: []
 contributors: []
